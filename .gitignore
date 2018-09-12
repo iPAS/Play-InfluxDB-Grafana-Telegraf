@@ -1,0 +1,6 @@
+/grafana_data/
+/influxdb_db/
+.ipynb_checkpoints/
+
+/telegraf.conf.d/*
+!/telegraf.conf.d/telegraf*.origin.conf
