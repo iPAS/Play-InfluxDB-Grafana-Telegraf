@@ -21,6 +21,13 @@
 
 > docker_influxdb_query.sh
 
+* You also be able to add data from a file in line-protocol format to the time-series database, 
+    with:
+
+> write_file_influxdb.sh
+
+where in this script, a default line-protocol file is in the sample directory.
+
 
 # Telegraf
 
