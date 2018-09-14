@@ -15,11 +15,23 @@ opt_graphite="-p 2003:2003 -e INFLUXDB_GRAPHITE_ENABLED=true"
 opt_admin="-p 8083:8083 -e INFLUXDB_ADMIN_ENABLED=true"
 
 
-docker network create ${network_name} --driver bridge
-function finish {
-    docker network rm $network_name
-}
-trap finish EXIT
+## Create/remove the shared network
+nid=$(docker network ls --filter "name=${network_name}" -q)
+# echo $nid
+if [ "${nid}" == "" ]; then
+    docker network create ${network_name} --driver bridge > /dev/null
+    echo "Bridge to the network, '${network_name}'."
+
+    finish() {
+        docker network rm ${network_name} > /dev/null
+        echo "Remove the '${network_name}' network."
+    }
+
+    trap finish EXIT
+
+else
+    echo "The bridge network -- '${network_name}' -- has already existed."
+fi
 
 
 docker run --name=${i_container_name} --net=${network_name} --rm ${user}  \
