@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source tick_parameters.sh
+source docker_env_vars.sh
 
 ## Run the command-line influx in the running container.
 docker exec ${user} -it ${i_container_name}  \

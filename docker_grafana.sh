@@ -1,7 +1,7 @@
 #!/bin/bash
 # http://docs.grafana.org/installation/docker/
 
-source tick_parameters.sh
+source docker_env_vars.sh
 
 [[ ! -d "${data_dir}" ]] && echo "'${data_dir}' does NOT existed, then create." && mkdir -p "${data_dir}"
 

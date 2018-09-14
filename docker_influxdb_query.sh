@@ -1,7 +1,7 @@
 #!/bin/bash
 # https://docs.influxdata.com/influxdb/latest/query_language/spec/
 
-source tick_parameters.sh
+source docker_env_vars.sh
 
 q="${*}"
 [[ "$q" == "" ]] && q="SHOW DATABASES"

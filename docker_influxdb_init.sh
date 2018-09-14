@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-source tick_parameters.sh
+source docker_env_vars.sh
 
 [[ -d "${db_dir}" ]] && echo "'${db_dir}' has already existed!" && exit 255
 mkdir -p "${db_dir}"

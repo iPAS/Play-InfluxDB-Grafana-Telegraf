@@ -1,7 +1,7 @@
 #!/bin/bash
 # https://hub.docker.com/_/influxdb/
 
-source tick_parameters.sh
+source docker_env_vars.sh
 
 [[ ! -d "${db_dir}" ]] && echo "'${db_dir}' does NOT exist!" && exit 255
 

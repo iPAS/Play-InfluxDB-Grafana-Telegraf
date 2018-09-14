@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source tick_parameters.sh
+source docker_env_vars.sh
 
 # https://docs.influxdata.com/influxdb/v1.6/tools/shell/
 # https://docs.influxdata.com/influxdb/v1.6/query_language/data_download/

@@ -1,7 +1,7 @@
 #!/bin/bash 
 # https://hub.docker.com/_/telegraf/
 
-source tick_parameters.sh
+source docker_env_vars.sh
 
 echo 'To generate the configuration file:
 > docker run --rm telegraf telegraf config > telegraf.conf
